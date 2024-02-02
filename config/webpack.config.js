@@ -121,12 +121,6 @@ module.exports = function (webpackEnv) {
         options: cssOptions,
       },
       {
-        loader: require.resolve('sass-loader'),
-        options: {
-          importLoaders: 1,
-        },
-      },
-      {
         // Options for PostCSS as we reference these options twice
         // Adds vendor prefixing based on your specified browser support in
         // package.json
@@ -349,7 +343,7 @@ module.exports = function (webpackEnv) {
         shouldUseSourceMap && {
           enforce: 'pre',
           exclude: /@babel(?:\/|\\{1,2})runtime/,
-          test: /\.(js|mjs|jsx|ts|tsx|sa|sc|c)ss$/,
+          test: /\.(js|mjs|jsx|ts|tsx|css)$/,
           loader: require.resolve('source-map-loader'),
         },
         {
